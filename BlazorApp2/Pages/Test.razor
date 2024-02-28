@@ -1,0 +1,33 @@
+﻿@page "/test"
+
+<div class="@((bgType ? "test" : "test_2"))">
+    <PageTitle>Test</PageTitle>
+
+    <h1>Test</h1>
+
+    <p>some text bew</p>
+
+    <button class="btn btn-primary">Test</button>
+
+    <button style="background-color: @color" class="btn btn-primary" @onclick="toggleColors">Click me</button>
+
+</div>
+
+
+
+@code {
+    private string color = "red";
+    private bool bgType = true;
+
+    private void toggleColors()
+    {
+        switch(color)
+        {
+            case "blue": color = "red"; break;
+            case "red": color = "green"; break;
+            case "green": color = "blue"; break;
+            default: color = "blue"; break;
+        }
+        bgType = !bgType;
+    }
+}

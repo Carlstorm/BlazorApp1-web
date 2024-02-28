@@ -1,0 +1,30 @@
+﻿@using BlazorApp2.Models;
+@inject IJSRuntime JSRuntime
+
+<PopUp ClosePopUp="ClosePopUp" Open="@Open">
+    <div class="component">
+        <img class="component_backdrop" src="@(Movie.backdropUrl is null ? "assets/Popcorn-Time.jpg" : $"https://image.tmdb.org/t/p/w1280/{@Movie.backdropUrl}")" onload="backdropLoad(this)" />
+        <div class="component_content">
+            <div class="component_header">
+                <h1>@Movie.Title</h1>
+                <span>@Movie.Overview</span>
+            </div>
+            <div class="component_content_card">
+
+            </div>
+
+        </div>
+    </div>
+</PopUp>
+
+@code {
+    [Parameter]
+    public MovieModel Movie { get; set; }
+
+    [Parameter]
+    public bool Open { get; set; }
+
+    [Parameter]
+    public Func<Task> ClosePopUp { get; set; }
+
+}

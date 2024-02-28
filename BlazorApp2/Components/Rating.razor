@@ -1,0 +1,24 @@
+﻿@using BlazorApp2.SvgComponents
+
+<div class="component">
+    <div class="base_stars">
+        <StarIcon Size="20px"/>
+        <StarIcon Size="20px" />
+        <StarIcon Size="20px" />
+        <StarIcon Size="20px" />
+        <StarIcon Size="20px" />
+    </div>
+    <div class="fill_stars" style="clip-path: polygon(0 0, @(Math.Round((decimal)RatingValue*10))% 0, @(Math.Round((decimal)RatingValue*10))% 100%, 0 100%)">
+        <StarIcon FillColor="black" Size="20px" />
+        <StarIcon FillColor="black" Size="20px" />
+        <StarIcon FillColor="black" Size="20px" />
+        <StarIcon FillColor="black" Size="20px" />
+        <StarIcon FillColor="black" Size="20px" />
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public double? RatingValue { get; set; } = 5;
+}

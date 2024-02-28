@@ -1,0 +1,23 @@
+﻿.component {
+    transform: translate(-4px, -1px)
+}
+
+.component:hover {
+    fill: black;
+    transform: translate(-4px, -1px) scale(1.1);
+}
+
+
+.Popcorn_Nav_Icon {
+    opacity: 0.6;
+    stroke: white;
+    height: 19px;
+    width: 19px;
+    transform: translateY(1px);
+    cursor: pointer;
+    transition: opacity 0.14s ease-in-out;
+}
+
+.Popcorn_Nav_Icon:hover {
+    opacity: 1;
+}

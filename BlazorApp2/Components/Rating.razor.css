@@ -1,0 +1,16 @@
+﻿.component {
+    position: relative;
+    width: max-content;
+}
+
+.base_stars {
+    position: relative;
+    width: max-content;
+    display: flex;
+}
+
+.fill_stars {
+    position: absolute;
+    top: 0;
+    display: flex;
+}
