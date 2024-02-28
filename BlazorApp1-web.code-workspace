@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../testStatic/publishFOlder/wwwroot/_framework"
+		},
+		{
+			"path": "../../testStatic/publishFOlder/wwwroot/assets"
+		},
+		{
+			"path": "../../testStatic/publishFOlder/wwwroot/css"
+		},
+		{
+			"path": "../../testStatic/publishFOlder/wwwroot/js"
+		},
+		{
+			"path": "../../testStatic/publishFOlder/wwwroot/sample-data"
+		}
+	],
+	"settings": {}
+}
