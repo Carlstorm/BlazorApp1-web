@@ -24,8 +24,8 @@ namespace BlazorApp2.Services
                 LastPageLoaded = 0;
                 MovieList = new List<MovieModel>();
             }
-
-            Console.WriteLine(Sort);
+        
+            Console.WriteLine("Sort");
 
             int nextPage = LastPageLoaded + 1;
             string baseUrl = "https://api.themoviedb.org/3/";
@@ -43,9 +43,11 @@ namespace BlazorApp2.Services
                 } else
                 {
                     if (Sort == "vote_average.desc")
-                        return SortPreflix + Sort + "&vote_count.gte=20";
+                        return SortPreflix + Sort + "&vote_count.gte=1000";
                     if (Sort == "primary_release_date.desc")
                         return SortPreflix + "first_air_date.desc" + "&vote_count.gte=10";
+                    if (Sort == "popularity.desc")
+                        return SortPreflix + Sort + "&vote_count.gte=4000";
                 }
                 return SortPreflix + Sort;
             }
@@ -71,14 +73,10 @@ namespace BlazorApp2.Services
             {
                 url = $"{baseUrl}search/{(GalleryMode == 0 ? "movie" : "tv")}?query={SearchString}&include_adult=false&language=en-US&page={nextPage}";
             }
-            else if (GalleryMode == 0 && Genre != null || GalleryMode == 1 && TvGenre != null || Sort != "popularity.desc")
+            else
             {
                 url = $"{baseUrl}discover/{(GalleryMode == 0 ? "movie" : "tv")}?include_adult=false&include_video=false&language=en-US&page={nextPage}{makeSortString()}{makeGenreFilter()}";
             } 
-            else
-            {
-                url = $"{baseUrl}{(GalleryMode == 0 ? "movie" : "tv")}/popular?language=en-US&page={nextPage}";
-            }
 
             var client = new HttpClient();
             var request = new HttpRequestMessage

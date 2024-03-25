@@ -38,8 +38,15 @@
     padding: 16px 32px;
 }
 
-.component_content>h1, .component_content>span {
-    padding: 16px 24px;
+.component_content h1, .component_content span {
+
+}
+
+.component_content span {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .component_content_card {
